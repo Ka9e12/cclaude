@@ -258,4 +258,4 @@ echo "Launching claude..."
 # Clean up temp files (containing API keys) BEFORE exec replaces this process
 rm -f "$PROVIDERS_FILE" "$MATCH_FILE" "$ENV_FILE"
 
-CLAUDE_CONFIG_DIR="$PROVIDER_DIR" exec claude
+CLAUDE_CONFIG_DIR=$(cygpath -w "$PROVIDER_DIR") exec claude
